@@ -1,6 +1,6 @@
 import unittest
 import json
-from app.wsgi import app
+from utility.create_app import create_app
 
 class SampleTEst(unittest.TestCase):
     """ Testcase for the Authentication related API endpoints 
@@ -9,7 +9,7 @@ class SampleTEst(unittest.TestCase):
     def setUp(self):
 
         # setup the app and push app context:
-        self.app = app
+        self.app = create_app()
         self.app_context = self.app.app_context()
         self.app_context.push()
         
